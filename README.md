@@ -15,3 +15,10 @@ Steps to export list of VM's from vCenter
 (4) Save as *.xls 
 (5) Copy/paste VM's you want to delete to your playbook
 </pre>
+
+Useful Commands
+<pre>
+ansible-playbook vcenter.yml 
+ansible-playbook vcenter.yml --tags "deploy_vm"
+ansible-playbook vcenter.yml --tags "delete_vms"
+</pre>
