@@ -27,6 +27,25 @@
         state: absent 
         force: yes
     with_items:
-       - vm_27438
-       - vm_6435
-       - vm_14847
+       - vm_5702
+       - vm_27694
+       - vm_19440
+       - vm_12746
+       - vm_6689
+
+# Deploy a guest from a template
+  - vsphere_guest:
+        validate_certs: false
+        vcenter_hostname: 10.1.183.5 
+        username: root 
+        password: vmware 
+        esxi: 
+            datacenter: CECS-POD3 
+            hostname: 10.1.183.7
+        guest: newvm-david
+        from_template: yes
+        template_src: workercliqr
+        cluster: CECS
+        vm_extra_config:
+            folder: CliqrDeployedVMs 
+
