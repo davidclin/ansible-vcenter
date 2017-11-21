@@ -31,6 +31,8 @@
        - vm_5702
        - vm_27694
        - vm_19440
+    tags:
+       - delete_vms
 
 # Deploy a guest from a template
   - vsphere_guest:
@@ -47,4 +49,5 @@
         cluster: CECS
         vm_extra_config:
             folder: CliqrDeployedVMs 
-
+    tags:
+        - deploy_vm
