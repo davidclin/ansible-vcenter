@@ -1,0 +1,32 @@
+---
+- hosts: localhost 
+  connection: local
+
+  tasks:
+
+  - name: Make sure we have pip
+    become: true
+    yum: pkg=python-pip state=latest
+            
+  - name: Install Python modules
+    become: true
+    pip: name={{ item }} state=latest
+    with_items:
+        - pysphere
+        - pyvmomi
+         
+# Remove a vm from vSphere
+# The VM must be powered off 
+
+  - vsphere_guest:
+        validate_certs: false
+        vcenter_hostname: 10.1.183.5
+        username: root
+        password: vmware
+        guest: "{{ item }}"
+        state: absent 
+        force: yes
+    with_items:
+       - vm_27438
+       - vm_6435
+       - vm_14847
