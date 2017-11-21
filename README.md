@@ -1,8 +1,11 @@
 # /etc/ansible/vcenter.yml
-This simple Ansible playbook allows you to delete VM instances from a list.
-VM instances must be powered off prior to invoking this playbook. 
+This simple Ansible playbook allows you to spin up a VM using a template.
 
-If the number of VM instances you need to remove is large (eg: 100+), the quick and dirty way to remove them is to get vCenter to export a list then manually copy/paste the list to this playbook. 
+This playbook also allows you to delete VM instances from a list.
+
+To delete VM instances from a list, the VM instances must be powered off prior to invoking this playbook. 
+
+If the number of VM instances you need to remove is large (eg: 100+), the quick and dirty way to remove them is to export a list from vCenter then manually copy/paste the VM list to this playbook. 
 
 Steps to export list of VM's from vCenter
 <pre>
