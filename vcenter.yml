@@ -16,8 +16,8 @@
         - pysphere
         - pyvmomi
          
-# Remove a vm from vSphere
-# The VM must be powered off 
+# Remove a vm from vCenter
+# All VM's must be powered off 
 
   - vsphere_guest:
         validate_certs: false
@@ -31,8 +31,6 @@
        - vm_5702
        - vm_27694
        - vm_19440
-       - vm_12746
-       - vm_6689
 
 # Deploy a guest from a template
   - vsphere_guest:
